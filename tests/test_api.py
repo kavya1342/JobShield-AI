@@ -40,6 +40,8 @@ def test_prediction_endpoint():
     assert 0.0 <= body["fraud_score"] <= 1.0
     assert body["predicted_class"] in [0, 1]
     assert body["model_version"] == "0.2.0"
+    assert isinstance(body["top_risk_terms"], list)
+    assert len(body["top_risk_terms"]) <= 5
 
 
 def test_missing_required_description_is_rejected():

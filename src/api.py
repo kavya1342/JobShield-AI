@@ -40,6 +40,9 @@ class JobPostingRequest(BaseModel):
         max_length=30_000
     )
 
+class RiskTerm(BaseModel):
+    term: str
+    contribution: float
 
 class PredictionResponse(BaseModel):
     fraud_score: float
@@ -47,6 +50,7 @@ class PredictionResponse(BaseModel):
     prediction: str
     threshold: float
     model_version: str
+    top_risk_terms: list[RiskTerm]
 
 
 @app.get("/health")

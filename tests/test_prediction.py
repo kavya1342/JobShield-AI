@@ -51,3 +51,32 @@ def test_negation_words_are_preserved():
 
     for word in ["no", "not", "nor", "never"]:
         assert word not in stop_words
+
+def test_risk_terms_are_positive_and_ranked():
+    posting = {
+        "title": "Work From Home Data Entry",
+        "description": (
+            "Earn money immediately and pay a "
+            "registration fee."
+        ),
+    }
+
+    result = predict_posting(posting)
+    risk_terms = result["top_risk_terms"]
+
+    assert 1 <= len(risk_terms) <= 5
+
+    contributions = [
+        item["contribution"]
+        for item in risk_terms
+    ]
+
+    assert all(
+        contribution > 0
+        for contribution in contributions
+    )
+
+    assert contributions == sorted(
+        contributions,
+        reverse=True
+    )
