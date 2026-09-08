@@ -1,0 +1,3 @@
+model,threshold,precision,recall,f1
+Text-only logistic regression,0.6,0.774,0.822,0.797
+Multi-input logistic regression,0.6,0.586,0.868,0.7

@@ -1,0 +1,33 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# IDE and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Dataset files
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated model artifacts
+models/*.joblib
+
+# Temporary files
+*.log
+*.tmp

@@ -1,0 +1,7 @@
+model,threshold,precision,recall,f1
+Majority baseline,,0.0,0.0,0.0
+Text logistic - unweighted,0.5,1.0,0.364,0.534
+Text logistic - balanced,0.5,0.618,0.853,0.717
+Text pipeline - balanced,0.6,0.774,0.822,0.797
+Multi-input pipeline,0.5,0.52,0.899,0.659
+Multi-input pipeline,0.6,0.586,0.868,0.7

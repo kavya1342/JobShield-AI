@@ -1,0 +1,5 @@
+model,tn,fp,fn,tp,error_cost
+Text unweighted - 0.50,2511,0,82,47,410
+Text balanced - 0.50,2443,68,19,110,163
+Text balanced - 0.60,2480,31,23,106,146
+Multi-input - 0.60,2432,79,17,112,164
