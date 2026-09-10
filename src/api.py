@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-
+from fastapi.middleware.cors import CORSMiddleware
 from .predict import (
     MODEL_VERSION,
     THRESHOLD,
@@ -15,6 +15,16 @@ app = FastAPI(
         "using TF-IDF and logistic regression."
     ),
     version=MODEL_VERSION,
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
 )
 
 
