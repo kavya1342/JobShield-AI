@@ -1,6 +1,9 @@
+import os
+
 from fastapi import FastAPI
-from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
+
 from .predict import (
     MODEL_VERSION,
     THRESHOLD,
@@ -16,12 +19,22 @@ app = FastAPI(
     ),
     version=MODEL_VERSION,
 )
+
+allowed_origins = [
+    origin.strip()
+    for origin in os.getenv(
+        "ALLOWED_ORIGINS",
+        (
+            "http://localhost:5173,"
+            "http://127.0.0.1:5173"
+        ),
+    ).split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
