@@ -206,3 +206,29 @@ See `.env.example` and `frontend/.env.example`.
 - Performance may decrease on newer postings or different geographic markets.
 - Explanations show statistical contributions, not proof of fraud.
 - Predictions should support human review rather than automatically reject postings.
+## Run with Docker
+
+Build the backend image:
+
+```powershell
+docker build -t jobshield-api:0.2.0 .
+```
+
+Run the container:
+
+```powershell
+docker run --name jobshield-api -p 8000:8000 jobshield-api:0.2.0
+```
+
+Test the health endpoint:
+
+```text
+http://127.0.0.1:8000/health
+```
+
+Stop and remove the container:
+
+```powershell
+docker stop jobshield-api
+docker rm jobshield-api
+```
