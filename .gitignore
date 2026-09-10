@@ -27,6 +27,7 @@ data/processed/*
 
 # Generated model artifacts
 models/*.joblib
+!models/jobshield_model.joblib
 
 # Temporary files
 *.log
