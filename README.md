@@ -10,6 +10,10 @@ JobShield AI is an end-to-end machine-learning system that identifies potentiall
 
 > The services use Render’s free hosting tier, so the first request may take a short time while the backend starts.
 
+### Application Preview
+
+![JobShield AI live fraud-risk analysis](docs/images/jobshield-live-demo.jpeg)
+
 ## Model Performance
 
 Final results on the untouched test set:
