@@ -2,6 +2,14 @@
 
 JobShield AI is an end-to-end machine-learning system that identifies potentially fraudulent job postings. It combines TF-IDF text features, logistic regression, cost-sensitive evaluation, explainable predictions, FastAPI, and React.
 
+## Live Demo
+
+- Web application: [JobShield AI](https://jobshield-ai-jpmm.onrender.com)
+- API documentation: [Swagger UI](https://jobshield-ai-ttyx.onrender.com/docs)
+- API health check: [Health endpoint](https://jobshield-ai-ttyx.onrender.com/health)
+
+> The services use Render’s free hosting tier, so the first request may take a short time while the backend starts.
+
 ## Model Performance
 
 Final results on the untouched test set:
